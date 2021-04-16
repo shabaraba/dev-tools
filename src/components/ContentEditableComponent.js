@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect, useContext} from 'react';
+import {useState, useRef, useEffect} from 'react';
 
 import useCaretPosition from '../hooks/CaretHooks/UseCurrentCaretPosition';
 import useMoveCaret from '../hooks/CaretHooks/UseMoveCaret';

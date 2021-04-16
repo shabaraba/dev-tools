@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import {useEffect} from 'react';
 
 const moveCaret = (editor, caretPosition) => {
     const selection = document.getSelection();
@@ -26,7 +26,7 @@ const moveCaret = (editor, caretPosition) => {
 
 const useMoveCaret = (editor, toPosition, input) => {
     useEffect(() => {
-        console.log(toPosition);
+        // console.log(toPosition);
         if (editor == null) return;
 
         moveCaret(editor, toPosition);
