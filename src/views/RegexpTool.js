@@ -3,11 +3,9 @@ import InputTargetStringComponent from './RegExpTool/InputTargetString';
 import InputRegexpComponent from './RegExpTool/InputRegexp';
 import '../styles/RegexpTool.sass';
 export const RegexpContext = createContext();
-export const TargetContext = createContext();
 
 const RegexpTool = () => {
     const [regexp, setRegexp] = useState("");
-    const [target, setTarget] = useState("");
     return (
         <RegexpContext.Provider value={[regexp, setRegexp]}>
             <div className="regexp-tool__input__group"> 

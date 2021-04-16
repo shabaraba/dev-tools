@@ -9,7 +9,7 @@ const ContentEditableComponent = (props) => {
     const [inputtingHtml, setInputtingHtml] = useState(null);
     const [isInputting, setIsInputting] = useState(false);
 
-
+    console.log(editorRef.current);
     const currentCaretPosition = useCaretPosition(editorRef.current);
     useMoveCaret(editorRef.current, currentCaretPosition, props.input);
 
@@ -18,17 +18,17 @@ const ContentEditableComponent = (props) => {
         setInputHtml(inputtingHtml);
         setInputtingHtml(null);
         props.setInput(editorRef.current.innerText);
-    }, [isInputting, inputtingHtml]);
+    }, [isInputting, inputtingHtml, props]);
+
+    useEffect(() => {
+        const innerText = editorRef.current.innerText;
+        setInputtingHtml(props.onChange(innerText));
+    }, [props])
 
     const handleChange = e => {
         const innerText = e.target.innerText;
         setInputtingHtml(props.onChange(innerText));
     }
-
-    useEffect(() => {
-        const innerText = editorRef.current.innerText;
-        setInputtingHtml(props.onChange(innerText));
-    }, [props.externalTorigger])
 
     return (
         <div

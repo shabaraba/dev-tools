@@ -18,9 +18,11 @@ const getCaretPosition = (editor) => {
 
 const useCaretPosition = (editor) => {
     const [caretPosition, setCaretPosition] = useState(0);
+    const position = getCaretPosition(editor);
     useEffect(() => {
-        setCaretPosition(getCaretPosition(editor));
-    })
+        console.log("call");
+        setCaretPosition(position);
+    }, [position])
     return caretPosition;
 }
 

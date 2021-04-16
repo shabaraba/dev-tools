@@ -30,7 +30,7 @@ const useMoveCaret = (editor, toPosition, input) => {
         if (editor == null) return;
 
         moveCaret(editor, toPosition);
-    }, [input]);
+    }, [editor, toPosition, input]);
 }
 
 export default useMoveCaret;
